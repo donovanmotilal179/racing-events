@@ -1,0 +1,58 @@
+<div class="container">
+    <h1>Edit Event Details</h1>
+    <br>   
+    <br>
+    <form #form="ngForm" (ngSubmit)="editEventDetail()">
+    <table class="table"> 
+        <tr>             
+            <td>Id</td>
+            <td><input type="text" id="id" name="id" [(ngModel)] = "editEventDetailRequest.id" readonly="true" style="width: 70%;"></td>
+        </tr>
+        <tr>             
+          <td>Event Id</td>
+          <td>
+            <input id="currenteventid" name="currenteventid" type="number" [(ngModel)] = "editEventDetailRequest.eventId" style="width: 70%;">
+            <!--<select id="eventname" [(ngModel)] = "editEventDetailRequest.eventid" style="width: 35%;">
+                <option value="1">Durban July</option>
+                <option value="2">J & B Met</option>
+                <option value="3">Kings Plate</option>
+                <option value="4">Vaal Classic</option>
+            </select>-->
+          </td>
+        </tr>
+        <tr>
+            <td>Race Name</td>
+            <td><input id="racename" name="racename" [(ngModel)] = "editEventDetailRequest.race_name" type="text" style="width: 70%;"></td>
+        </tr>
+        <tr>
+            <td>Time of Race</td>
+            <td><!--<input id="currentracetime" type="text" value="10:00" style="width: 35%;">&nbsp;-->
+                <input id="racetime" name="racetime" [(ngModel)] = "editEventDetailRequest.time_of_race" type="time" style="width: 70%;"></td>
+        </tr>
+        <tr>
+            <td>Distance of Race (km)</td>
+            <td><!--<input id="currentracedist" type="text" value="2000" style="width: 35%;">&nbsp;-->
+                <input id="racedist" name="racedist" type="text" [(ngModel)] = "editEventDetailRequest.distance_of_race" style="width: 70%;"></td>
+        </tr>
+        <tr>
+            <td>Number of participating horses</td>
+            <td><!--<input id="currentnumhorses" type="text" value = "8" style="width: 35%;">&nbsp;-->
+                <input id="numhorses" name="numhorses" type="number" [(ngModel)] = "editEventDetailRequest.num_of_particpating_horses" style="width: 70%;"></td>
+        </tr>
+        <tr>
+            <td>Number of participating jockeys</td>
+            <td><!--<input id="currentnumjockeys" type="text" value = "8" style="width: 35%;">&nbsp;-->
+                <input id="numjockeys" name="numjockeys" type="number" [(ngModel)] = "editEventDetailRequest.num_of_particpating_jockeys" style="width: 70%;"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit">&nbsp;&nbsp;
+                <button type="button" (click)="deleteEventDetail(editEventDetailRequest.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>

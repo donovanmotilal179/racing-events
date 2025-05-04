@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Events List</h1>
+  <br>
+  <button routerLink="addevent">Add New Event</button>
+  <br>
+  <br>
+  <table class="table"> 
+    <tr>
+        <th>Id</th>    
+        <th>Event Name</th>
+        <th>Date of Event</th>
+        <th>Event Location</th>
+        <th>Entry Fee</th>        
+        <th>Action</th>        
+
+    </tr>    
+    <tr *ngFor="let event of Events">
+        <td>{{ event.id }}</td>
+        <td>{{ event.event_name }}</td>
+        <td>{{ event.date_of_event }}</td>
+        <td>{{ event.event_location }}</td>
+        <td>R {{ event.entry_fee }}</td>
+        <!--<td>R {{ event.entry_fee | currency: "ZAR" }}</td>-->
+        <td>
+          <a routerLink="editevent/{{event.id}}">Edit</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+          <a routerLink="eventDetails/{{event.id}}">View Event Details</a>
+        </td>
+    </tr>    
+  </table>
+  <p *ngIf="!Events || Events.length <= 0">No Events Found!</p>
+</div>
+<!--<router-outlet></router-outlet>-->

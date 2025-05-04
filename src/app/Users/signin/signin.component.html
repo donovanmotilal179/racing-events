@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Signin</h1>
+    <br>   
+    <br>
+    <form #form="ngForm" (ngSubmit)="signIn()">
+        <table class="table"> 
+        <tr>             
+            <td>Username</td>
+            <td><input id="username" name="username" [(ngModel)] = "userSignRequest.user_name" style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input id="password" name="password" [(ngModel)] = "userSignRequest.password" type="password" style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Sign In">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

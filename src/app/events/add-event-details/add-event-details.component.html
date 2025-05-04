@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Add Event Details</h1>
+    <br>   
+    <br>
+    <form #form="ngForm" (ngSubmit)="addEventDetail()">
+        <table class="table"> 
+        <tr>             
+            <td>Event Name</td>
+            <td>
+                <select id="eventname" name="eventname" [(ngModel)] = "addEventDetailRequest.eventId" style="width: 70%;">
+                    <option value=1>Durban July</option>
+                    <option value=2>J & B Met</option>
+                    <option value=3>Kings Plate</option>
+                    <option value=4>Vaal Classic</option>
+                    <option value=5>Phumelela Classic V2</option>
+                    <option value=8>Summer December II</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+                <td>Race Name</td>
+                <td><input id="racename" name="racename" [(ngModel)] = "addEventDetailRequest.race_name" type="text" style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>Time of Race</td>
+                <td><input id="racetime" name="racetime" [(ngModel)] = "addEventDetailRequest.time_of_race" type="time" style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>Distance of Race (km)</td>
+                <td><input id="racedist" name="racedist" [(ngModel)] = "addEventDetailRequest.distance_of_race" type="text" style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>Number of participating horses</td>
+                <td><input id="numhorses" name="numhorses" [(ngModel)] = "addEventDetailRequest.num_of_particpating_horses" type="number" style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>Number of participating jockeys</td>
+                <td><input id="numjockeys" name="numjockeys" [(ngModel)] = "addEventDetailRequest.num_of_particpating_jockeys" type="number" style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit">                
+                </td>
+            </tr>
+        </table>    
+    </form>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Edit Events</h1>
+    <br>   
+    <br>
+    <form #form="ngForm" (ngSubmit)="editEvent()">
+        <table class="table"> 
+            <tr>             
+                <td>Id</td>
+                <td><input type="text" id="id" name="id" [(ngModel)] = "editEventRequest.id" readonly="true" style="width: 70%;"></td>
+            </tr>
+            <tr>             
+                <td>Event Name</td>
+                <td><input type="text" id="eventname" name="eventname" [(ngModel)] = "editEventRequest.event_name"  style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>Date of Event</td>
+                <td><input type="date" id="dateofevent" name="dateofevent" [(ngModel)] = "editEventRequest.date_of_event"  style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>Event Location</td>
+                <td><input type="text" id="eventlocation" name="eventlocation" [(ngModel)] = "editEventRequest.event_location"  style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>Entry Fee (ZAR)</td>
+                <td><input type="text" id="entryfee" name="entryfee" [(ngModel)] = "editEventRequest.entry_fee"  style="width: 70%;"></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit">&nbsp;&nbsp;
+                    <button type="button" (click)="deleteEvent(editEventRequest.id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </form>    
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>Events Details Single Search List</h1>
+    <br>
+    <input placeholder="Filter by race name" type="text" #filter />    
+    &nbsp;
+    <button class="primary" type="button" (click)="getFilteredList(filter.value)">Search</button>
+    <p>&nbsp;</p>    
+    <button routerLink="addeventdetail">Add New Event Detail</button>
+    <br>
+    <br>
+    <table class="table"> 
+        <tr>
+            <th>ID</th>    
+            <th>Race Name</th>
+            <th>Time of Race</th>
+            <th>Distance of Race</th>
+            <th>No of Particpating Horses</th>
+            <th>No of Particpating Jockeys</th>
+            <th>Action</th>
+
+        </tr>
+        <tr *ngFor="let eventdetail of this.raceNameFilter">
+            <td>{{ eventdetail?.id }}</td>
+            <td>{{ eventdetail?.race_name}}</td>
+            
+            <td *ngIf="eventdetail.time_of_race.toString() < '12:00'; then thenBlock else elseBlock"></td>
+            <ng-template #thenBlock>
+                <td>{{ eventdetail.time_of_race }} - Morning Event</td>
+            </ng-template>
+            <ng-template #elseBlock>
+                <td>{{ eventdetail.time_of_race }} - Afternoon Event</td>
+            </ng-template>
+                        
+
+            <td>{{ eventdetail?.distance_of_race }}</td>
+            <td>{{ eventdetail?.num_of_particpating_horses }}</td>
+            <td>{{ eventdetail?.num_of_particpating_jockeys }}</td>
+            <td><a routerLink="/eventDetails/editeventdetail/{{eventdetail.id}}">Edit</a></td>
+        </tr>        
+    </table>
+    <p *ngIf="!this.raceNameFilter || this.raceNameFilter.length <= 0">No Event Details Found!</p>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Add Events</h1>
+    <br>   
+    <br>
+    <form #form="ngForm" (ngSubmit)="addEvent()">
+        <table class="table"> 
+            <tr>             
+                <td>Event Name</td>
+                <td><input type="text" id="eventname" name="eventname" [(ngModel)] = "addEventRequest.event_name"  style="width: 70%;"></td>
+              </tr>
+              <tr>
+                  <td>Date of Event</td>
+                  <td><input type="date" id="dateofevent" name="dateofevent" [(ngModel)] = "addEventRequest.date_of_event"  style="width: 70%;"></td>
+              </tr>
+              <tr>
+                  <td>Event Location</td>
+                  <td><input type="text" id="eventlocation" name="eventlocation" [(ngModel)] = "addEventRequest.event_location"  style="width: 70%;"></td>
+              </tr>
+              <tr>
+                  <td>Entry Fee (ZAR)</td>
+                  <td><input type="text" id="entryfee" name="entryfee" [(ngModel)] = "addEventRequest.entry_fee"  style="width: 70%;"></td>
+              </tr>
+              <tr>
+                  <td>&nbsp;</td>
+              </tr>
+              <tr>
+                  <td>&nbsp;</td>
+                  <td><input type="submit"></td>
+              </tr>
+          </table>
+    </form>    
+</div>

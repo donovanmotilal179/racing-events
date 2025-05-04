@@ -1,0 +1,27 @@
+
+<!--<a routerLink="events">Events</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a routerLink="eventDetails">Event Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a routerLink="eventDetailsSearch">Event Details Search</a>
+<p>&nbsp;</p> -->
+
+<div *ngIf="userService.getMenuItems()?.event_access === true && userService.getMenuItems()?.eventdetail_access === true">
+    <a routerLink="events">Events</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="eventDetails">Event Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="eventDetailsSearch">Event Details Search</a>
+    <p>&nbsp;</p>
+</div>
+
+<div *ngIf="userService.getMenuItems()?.event_access === true && userService.getMenuItems()?.eventdetail_access === false">
+    <a routerLink="events">Events</a>
+    <p>&nbsp;</p>
+</div>
+
+<div *ngIf="userService.getMenuItems()?.event_access === false && userService.getMenuItems()?.eventdetail_access === true">
+    <a routerLink="eventDetails">Event Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a routerLink="eventDetailsSearch">Event Details Search</a>
+    <p>&nbsp;</p>
+</div>
+
+<div *ngIf="userService.getMenuItems()?.event_access === false && userService.getMenuItems()?.eventdetail_access === false">
+    <p>User Not Found.</p>
+</div>

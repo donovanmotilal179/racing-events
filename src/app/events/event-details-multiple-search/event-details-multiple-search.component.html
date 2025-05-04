@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Events Details Multiple Search List</h1>
+    <br>
+    <input placeholder="Filter by race name" type="text" #filter />    
+    &nbsp;
+    <input placeholder="Filter by distance of race" type="text" #filter1 />
+    &nbsp;
+    <button class="primary" type="button" (click)="getFilteredList(filter.value, filter1.value)">Search</button>    
+    <br>
+    <br>
+    <table class="table"> 
+        <tr>
+            <th>ID</th>    
+            <th>Race Name</th>
+            <th>Time of Race</th>
+            <th>Distance of Race</th>
+            <th>No of Particpating Horses</th>
+            <th>No of Particpating Jockeys</th>
+
+        </tr>
+        <tr *ngFor="let eventdetail of this.raceNameFilter">
+            <td>{{ eventdetail?.id }}</td>
+            <td>{{ eventdetail?.race_name}}</td>
+            <td>{{ eventdetail?.time_of_race }}</td>
+            <td>{{ eventdetail?.distance_of_race }}</td>
+            <td>{{ eventdetail?.num_of_particpating_horses }}</td>
+            <td>{{ eventdetail?.num_of_particpating_jockeys }}</td>
+        </tr>        
+    </table>
+</div>
